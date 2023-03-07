@@ -42,3 +42,46 @@ void Lista::imprime() {
     }
 
 };
+
+bool Lista::vazia() {
+    
+    if (primeiro)
+        return false;
+
+    return true;
+
+}
+
+NoLista* Lista::busca(int v) {
+
+    NoLista *no = primeiro;
+
+    while (no) {
+        
+        if (no->getInfo() == v)
+            return no;
+
+        no = no->getProx();
+
+    }
+
+    return nullptr;
+
+}
+
+int Lista::comprimento() {
+
+    if (vazia())
+        return 0;
+
+    int tam = 1;
+
+    NoLista *no = primeiro;
+
+    while (no->getProx()) {
+        no = no->getProx();
+        tam++;
+    }
+
+    return tam;
+}

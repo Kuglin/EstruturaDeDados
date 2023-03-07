@@ -24,7 +24,7 @@ class Lista {
 
         bool vazia(); // Informa se a Lista está vazia
 
-        NoLista busca(int v); // Retorna o Endereço do no
+        NoLista* busca(int v); // Retorna o Endereço do no
 
         int comprimento(); // Calcula e Retorna o Comprimento da Lista
 

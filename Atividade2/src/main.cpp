@@ -10,13 +10,10 @@ int main(int argc, char const *argv[])
 {
     Lista *lista = new Lista();
 
-    lista->insere(10);
+    for (int i=0; i<20; i++)
+        lista->insere(i);
 
-    lista->insere(10);
-
-    lista->insere(11);
-
-    lista->imprime();
+    cout << lista->busca(1)->getInfo();
 
     return 0;
 }
