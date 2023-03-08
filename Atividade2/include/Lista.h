@@ -1,7 +1,7 @@
 /**
  * @author Guilherme Eduardo Kuglin
  * @date 2023, March 7
- * @version 2023, March 7
+ * @version 2023, March 8
 **/
 
 #ifndef LISTA_H
@@ -20,13 +20,15 @@ class Lista {
 
         void imprime(); // Imprime os Valores da Lista
 
-        // string toString(); // Retorna uma String com os Valores da Lista
+        friend std::ostream &operator<<( std::ostream &out, Lista* lista ); // Retorna uma String com os Valores da Lista
 
         bool vazia(); // Informa se a Lista está vazia
 
         NoLista* busca(int v); // Retorna o Endereço do no
 
         int comprimento(); // Calcula e Retorna o Comprimento da Lista
+
+        NoLista* getPrimeiro(); // Retorna primeiro elemento
 
     private:
 

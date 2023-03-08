@@ -1,7 +1,7 @@
 /**
  * @author Guilherme Eduardo Kuglin
  * @date 2023, March 7
- * @version 2023, March 7
+ * @version 2023, March 8
 **/
 
 #ifndef NOLISTA_H
@@ -23,7 +23,7 @@ class NoLista {
 
         NoLista* getProx(); // Retorna o proximo no
 
-        //toString
+        friend std::ostream &operator<<( std::ostream &out, NoLista* no ); // Retorna uma String com os Valores do No
 
     private:
 

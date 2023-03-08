@@ -1,5 +1,8 @@
 #include "NoLista.h"
 
+#include <iostream>
+using namespace std;
+
 NoLista::NoLista(int valor) {
 
     informacao = valor;
@@ -29,3 +32,10 @@ NoLista* NoLista::getProx() {
     return proximo;
 
 };
+
+std::ostream &operator<<( std::ostream &out, NoLista* no ) {
+
+    out << no->getInfo();
+    return out;
+
+}

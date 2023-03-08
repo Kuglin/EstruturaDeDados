@@ -12,21 +12,15 @@ Lista::Lista() {
 
 void Lista::insere(int v) {
 
-    
-
     if (!primeiro) {
         primeiro = new NoLista(v);
     }
 
     else {
-        NoLista *no = primeiro;
-        while (no->getProx()) {
-            no = no->getProx();
-        }
-        
-        NoLista* novoNo = new NoLista(v);
 
-        no->setProximo(novoNo);
+        NoLista* novoNo = new NoLista(v);
+        novoNo->setProximo(primeiro);
+        primeiro = novoNo;
 
     };
 
@@ -42,6 +36,19 @@ void Lista::imprime() {
     }
 
 };
+
+std::ostream &operator<<( std::ostream &out, Lista* lista ) {
+
+    NoLista *no = lista->getPrimeiro();
+
+    while (no) {
+        out << no->getInfo() << " ";
+        no = no->getProx();
+    }
+
+    return out;
+
+}
 
 bool Lista::vazia() {
     
@@ -84,4 +91,10 @@ int Lista::comprimento() {
     }
 
     return tam;
+}
+
+NoLista* Lista::getPrimeiro() {
+    
+    return primeiro;
+
 }
