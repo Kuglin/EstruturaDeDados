@@ -9,6 +9,10 @@ NoLista::NoLista(int valor) {
 
 };
 
+NoLista::~NoLista() {
+    
+};
+
 void NoLista::setInfo(int valor) {
 
     informacao = valor;

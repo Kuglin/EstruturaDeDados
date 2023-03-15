@@ -15,6 +15,8 @@ class NoLista {
 
         NoLista(int valor); // Construtor Padrão
 
+        ~NoLista(); // Destrutor
+
         void setInfo(int valor); // Altera valor do Nó
         
         int getInfo(); // Retorna Valor do No

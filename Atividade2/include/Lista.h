@@ -30,6 +30,16 @@ class Lista {
 
         NoLista* getPrimeiro(); // Retorna primeiro elemento
 
+        NoLista* ultimo(); // Retorna o ultimo Elemento da Lista
+
+        void retira(int v); // Retira primeiro nó que contiver o valor
+
+        void libera(); //Destrói toda a lista
+
+        void insereFim(int v); //Inserir valor no final da lista
+
+        bool igual(Lista* l); //Verifica se as listas são iguais (mesmo elementos na mesma ordem)
+
     private:
 
         NoLista* primeiro; // Primeiro Elemento da Lista

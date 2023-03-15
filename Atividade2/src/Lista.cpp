@@ -98,3 +98,62 @@ NoLista* Lista::getPrimeiro() {
     return primeiro;
 
 }
+
+NoLista* Lista::ultimo() {
+
+    NoLista *no = primeiro;
+
+    while (no->getProx()) {
+        no = no->getProx();
+    
+    }
+
+    return no;
+
+}
+
+void Lista::retira(int v) {
+
+    if (comprimento() == 0)
+        return;
+
+    NoLista *no = primeiro->getProx();
+    NoLista *noAnt = primeiro;
+
+    while (no) {
+
+        if (no->getInfo() == v) {
+            noAnt->setProximo(no->getProx());
+            delete no;
+            return;
+        }
+        
+        noAnt = no;
+        no = no->getProx();
+
+    }
+
+    primeiro = nullptr;
+
+}
+
+void Lista::libera() {
+
+    if (comprimento() == 0)
+        return;
+
+    NoLista *no = primeiro;
+    
+    while (no) {
+
+        NoLista *noAnt = no;
+
+        no = no->getProx();
+
+        delete noAnt;
+
+    }
+
+    primeiro = nullptr;
+
+}
