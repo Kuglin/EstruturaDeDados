@@ -11,9 +11,12 @@ int main(int argc, char const *argv[])
     for (int i=20; i>=0; i--)
         lista->insere(i);
 
-    lista->libera();
+    Lista *lista2 = new Lista();
 
-    cout << lista;
+    for (int i=20; i>=0; i--)
+        lista2->insere(i);
+
+    cout << lista->igualRecursivo(lista2);
 
 
 

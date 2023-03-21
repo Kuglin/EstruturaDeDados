@@ -40,9 +40,21 @@ class Lista {
 
         bool igual(Lista* l); //Verifica se as listas são iguais (mesmo elementos na mesma ordem)
 
+        void imprimeRecursivo(); // Imprime todos os valores da lista usando recursividade
+
+        void retiraRecursivo(int v); // Retira valor usando recursividade
+
+        bool igualRecursivo(Lista* l); // Verifica se as Listas são iguais usando recursividade
+
     private:
 
         NoLista* primeiro; // Primeiro Elemento da Lista
+
+        void imprimeRecursivoAux(NoLista* l); // Funcao auxiliar para imprimir recursivamente
+
+        NoLista* retiraRecursivoAux(NoLista* l, int v); // Funcao auxiliar para retirar recursivamente
+
+        bool igualRecursivoAux(NoLista* l1, NoLista* l2); // Funcao auxiliar para verificar se as Listas são iguais recursivamente
 
 };
 
