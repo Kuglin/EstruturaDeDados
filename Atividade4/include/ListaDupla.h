@@ -1,7 +1,7 @@
 /**
  * @author Guilherme Eduardo Kuglin
  * @date 2023, March 22
- * @version 2023, March 22
+ * @version 2023, March 29
 **/
 
 #ifndef LISTADUPLA_H
@@ -39,6 +39,8 @@ class ListaDupla {
         void insereFim(int v); // Insere elemento no final da lista
 
         bool igual(ListaDupla* l); // Verifica se as listas são iguais
+        
+        NoListaDupla* getPrim(); // Retorna primeiro elemento da Lista
 
         void merge(ListaDupla* l); // Junta duas listas
 

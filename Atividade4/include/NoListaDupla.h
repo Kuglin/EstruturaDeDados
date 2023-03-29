@@ -1,7 +1,7 @@
 /**
  * @author Guilherme Eduardo Kuglin
  * @date 2023, March 22
- * @version 2023, March 22
+ * @version 2023, March 29
 **/
 
 #ifndef NO_LISTADUPLA_H

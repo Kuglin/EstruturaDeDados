@@ -2,7 +2,10 @@
 
 NoListaDupla::NoListaDupla(int v) {
 
+    ant = nullptr;
+    prox = nullptr;
     info = v;
+    
 }
 
 void NoListaDupla::setInfo(int info) {

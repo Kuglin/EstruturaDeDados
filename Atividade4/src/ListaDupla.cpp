@@ -29,8 +29,13 @@ void ListaDupla::imprime() {
 
     NoListaDupla* no = prim;
 
-    if (!prim)
+    if (!prim) {
+
+        cout << "\n";
         return;
+        
+    }
+        
 
     while (no) {
         
@@ -39,6 +44,8 @@ void ListaDupla::imprime() {
         no = no->getProx();
 
     }
+
+    cout << "\n";
 
 }
 
@@ -129,13 +136,16 @@ void ListaDupla::libera() {
 
     NoListaDupla *no = prim;
     
-    while (no) {
 
+    while (no->getProx()) {
+        
         no = no->getProx();
 
         delete no->getAnt();
 
     }
+
+    delete no;
 
     prim = nullptr;
 
@@ -150,8 +160,66 @@ void ListaDupla::insereFim(int v) {
 
     NoListaDupla* novoNo = new NoListaDupla(v);
 
-    novoNo->setProx(nullptr); // ????????????????????????????????????
-
     //novoNo->setAnt(no);
     no->setProx(novoNo);
+}
+
+NoListaDupla* ListaDupla::getPrim() {
+
+    return prim;
+
+}
+
+bool ListaDupla::igual(ListaDupla* l) {
+
+    NoListaDupla *no1 = prim;
+    NoListaDupla *no2 = l->getPrim();
+
+    while (no1 && no2) {
+
+        if ( !( no1->getInfo() == no2->getInfo()) )
+            return false;
+        
+        no1 = no1->getProx();
+        no2 = no2->getProx();
+
+        if ( ( !no1 && no2 ) || ( no1 && !no2 ) )
+            return false;
+    }
+
+    return true;
+
+}
+
+void ListaDupla::merge(ListaDupla *l) {
+
+    NoListaDupla *no1 = prim;
+    NoListaDupla *no2 = l->getPrim();
+
+    while (no1) {
+
+        if (!no2)
+            return;
+
+        NoListaDupla* novoNo = new NoListaDupla(no2->getInfo());
+
+        novoNo->setAnt(no1);
+
+        if (no1->getProx()) {
+
+            novoNo->setProx(no1->getProx());
+            no1->getProx()->setAnt(novoNo);
+            no1->setProx(novoNo);
+            no1 = novoNo;
+
+        }
+        
+        else 
+            no1->setProx(novoNo);
+            
+        no1 = no1->getProx();
+        no2 = no2->getProx();
+
+
+    }
 }
